@@ -21,7 +21,7 @@ If you are using a Load Balancer in front of your Web Application, Security rule
  
  
 ### 1- Create a New (empty) Security List.    
-1.1-	Sign-in to the OCI web console with your OCI user account. 
+1.1-	Sign-in to the OCI web console with your OCI user account.
 1.2-	Open the OCI Menu (top left), expand the ***‘Networking’*** section and click on ***‘Virtual Cloud Networks’***. 
 1.3-	Click on your VCN then select the ***‘Security Lists’*** Resources type.  
 1.4-	Click on the ***‘Create Security List’*** button. 
@@ -59,11 +59,6 @@ oci network security-list update --security-list-id $wafseclist --ingress-securi
 4.3-	Click on ***‘Add Security List’*** button.  
 4.4-	Select the newly created Security List (Ie. OCIWAF-SL)  
 4.4-	Click ***‘Add Security List’*** button to assign the Security to the subnet.  
- 
+
 ### 5-   Remove any permissive rules 
 5.1-	Click ***‘Add Security List’*** button to assign the Security to the subnet.  
-
-
-
- 
-
