@@ -1,7 +1,7 @@
 # oci_waf_seclist
 Quick way to lockdown OCI WAF Origin 
 
-### Lockdown OCI WAF Origin using CloudShell (SecList)
+#### Lockdown OCI WAF Origin using CloudShell (SecList)
 
 Once you created and configured your new OCI WAF Policy, it is important to apply a set of security rules around your Web Application to block all requests, which are not passing through the WAF service.
 
@@ -11,7 +11,7 @@ This document will guide you through the steps needed to create and assign a ***
 
 
 
-### Important Note: 
+#### Important Note: 
 If you are using a Load Balancer in front of your Web Application, Security rules must be applied to your Load Balancer subnet (if using Security Lists) or Load Balancer Network Interfaces (if using network Security Groups).
 
 #### Prerequisites:
@@ -53,11 +53,13 @@ wafseclist=ocid1.securitylist.oc1.eu-frankfurt-1.aaaaaaaxxxxx
 2.4.1-	***[OPTION 1]*** Allow incoming HTTP (TCP80) and HTTPS (TCP443) traffic, copy and Paste (CTRL+SHIFT+V) the commands below in your Cloud Shell session.
 
 wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Mkpk6FPW9_BovdrajqNzKzH7M2UMhIJN5vEg-QLF6Vo/n/oracsmemeaspec/b/FraBuck01/o/wafseclist-import-80-443.json
+
 oci network security-list update --security-list-id $wafseclist --ingress-security-rules file://wafseclist-import-80-443.json
 
 2.4.2- 	***[OPTION 2]*** Allow incoming HTTPS (TCP443) traffic only, copy and Paste (CTRL+SHIFT+V) the commands below in your Cloud Shell session.
 
 wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/V-w5R9aNlzszQZeAbWDl6gyZ7x6cvIgv0162qhLLEoI/n/oracsmemeaspec/b/FraBuck01/o/wafseclist-import-443.json
+
 oci network security-list update --security-list-id $wafseclist --ingress-security-rules file://wafseclist-import-443.json
 
 
