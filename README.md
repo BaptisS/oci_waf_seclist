@@ -28,25 +28,37 @@ If you are using a Load Balancer in front of your Web Application, Security rule
 
 1.3-	Click on your VCN then select the ***‘Security Lists’*** Resources type.  
 
+![PMScreens](/img/01.jpg)
+
 1.4-	Click on the ***‘Create Security List’*** button. 
+
+![PMScreens](/img/02.jpg)
 
 1.5-	Provide a meaningful name for this new security list. (Ie. ‘OCIWAF-SL’)
 
 1.6-	Select proper compartment, then click on ***‘Create Security List’*** button. 
 
 1.7-	Highlight the newly created Security list and select ***‘Copy OCID’*** in its right menu. 
+
+![PMScreens](/img/03.jpg)
  
 ### 2-    Import Security Rules using Cloud Shell commands.
 
 2.1-	Start your OCI Cloud Shell session. In the OCI Console top right section, click on the Cloud Shell icon:  
 
+![PMScreens](/img/04.jpg)
+
 2.2-	Wait few seconds for your Cloud Shell instance to be started and ready to use.
+
+![PMScreens](/img/05.jpg)
 
 2.3-	Copy and Paste (CTRL+SHIFT+’V’) the command below in your Cloud Shell session.
 
 wafseclist=ocid1.securitylist.oc1.eu-frankfurt-1.aaaaaaaxxxxx
 
 (Replace ‘ocid1.securitylist.oc1.eu-frankfurt-1.aaaaaaaxxxxx’ by your Security List OCID copied in the previous step.)
+
+![PMScreens](/img/06.jpg)
 
 2.4-	Import Security rules. 
 
@@ -64,16 +76,25 @@ oci network security-list update --security-list-id $wafseclist --ingress-securi
 
 
 ### 3-    Review the security list content. 
+
+![PMScreens](/img/07.jpg)
+
 3.1-	Ensure the security List has been populated successfully. 
 
 ### 4-   Assign the Security List to the desired subnet.
 4.1-	Go to your VCN dashboard, and then select the ***‘Subnets’*** Resources section. 
 
+![PMScreens](/img/08.jpg)
+
 4.2-	Click on the desired subnet name (LBaaS/WebApp subnet). 
+
+![PMScreens](/img/09.jpg)
 
 4.3-	Click on ***‘Add Security List’*** button.  
 
 4.4-	Select the newly created Security List (Ie. OCIWAF-SL)  
+
+![PMScreens](/img/10.jpg)
 
 4.5-	Click ***‘Add Security List’*** button to assign the Security to the subnet.  
 
