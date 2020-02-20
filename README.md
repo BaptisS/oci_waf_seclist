@@ -1,7 +1,7 @@
 # oci_waf_seclist
 Quick way to lockdown OCI WAF Origin 
 
-#### Lockdown OCI WAF Origin using CloudShell (SecList)
+**Lockdown OCI WAF Origin using CloudShell (SecList)**
 
 Once you created and configured your new OCI WAF Policy, it is important to apply a set of security rules around your Web Application to block all requests, which are not passing through the WAF service.
 
@@ -11,10 +11,10 @@ This document will guide you through the steps needed to create and assign a ***
 
 
 
-#### Important Note: 
+**Important Note:** 
 If you are using a Load Balancer in front of your Web Application, Security rules must be applied to your Load Balancer subnet (if using Security Lists) or Load Balancer Network Interfaces (if using network Security Groups).
 
-#### Prerequisites:
+**Prerequisites:**
 -	At least one OCI WAF Policy already created (and in the ‘Available' state)  (https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/managingwaf.htm)
 -	An OCI user account with sufficient permissions to create and assign Security Lists in the desired Compartment / VCN. 
  
