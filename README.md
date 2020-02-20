@@ -21,17 +21,27 @@ If you are using a Load Balancer in front of your Web Application, Security rule
  
  
 ### 1- Create a New (empty) Security List.    
+
 1.1-	Sign-in to the OCI web console with your OCI user account.
+
 1.2-	Open the OCI Menu (top left), expand the ***‘Networking’*** section and click on ***‘Virtual Cloud Networks’***. 
+
 1.3-	Click on your VCN then select the ***‘Security Lists’*** Resources type.  
+
 1.4-	Click on the ***‘Create Security List’*** button. 
+
 1.5-	Provide a meaningful name for this new security list. (Ie. ‘OCIWAF-SL’)
+
 1.6-	Select proper compartment, then click on ***‘Create Security List’*** button. 
+
 1.7-	Highlight the newly created Security list and select ***‘Copy OCID’*** in its right menu. 
  
 ### 2-    Import Security Rules using Cloud Shell commands.
+
 2.1-	Start your OCI Cloud Shell session. In the OCI Console top right section, click on the Cloud Shell icon:  
+
 2.2-	Wait few seconds for your Cloud Shell instance to be started and ready to use.
+
 2.3-	Copy and Paste (CTRL+SHIFT+’V’) the command below in your Cloud Shell session.
 
 wafseclist=ocid1.securitylist.oc1.eu-frankfurt-1.aaaaaaaxxxxx
@@ -39,6 +49,7 @@ wafseclist=ocid1.securitylist.oc1.eu-frankfurt-1.aaaaaaaxxxxx
 (Replace ‘ocid1.securitylist.oc1.eu-frankfurt-1.aaaaaaaxxxxx’ by your Security List OCID copied in the previous step.)
 
 2.4-	Import Security rules. 
+
 2.4.1-	***[OPTION 1]*** Allow incoming HTTP (TCP80) and HTTPS (TCP443) traffic, copy and Paste (CTRL+SHIFT+V) the commands below in your Cloud Shell session.
 
 wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Mkpk6FPW9_BovdrajqNzKzH7M2UMhIJN5vEg-QLF6Vo/n/oracsmemeaspec/b/FraBuck01/o/wafseclist-import-80-443.json
@@ -55,10 +66,14 @@ oci network security-list update --security-list-id $wafseclist --ingress-securi
 
 ### 4-   Assign the Security List to the desired subnet.
 4.1-	Go to your VCN dashboard, and then select the ***‘Subnets’*** Resources section. 
+
 4.2-	Click on the desired subnet name (LBaaS/WebApp subnet). 
+
 4.3-	Click on ***‘Add Security List’*** button.  
+
 4.4-	Select the newly created Security List (Ie. OCIWAF-SL)  
-4.4-	Click ***‘Add Security List’*** button to assign the Security to the subnet.  
+
+4.5-	Click ***‘Add Security List’*** button to assign the Security to the subnet.  
 
 ### 5-   Remove any permissive rules 
 5.1-	Click ***‘Add Security List’*** button to assign the Security to the subnet.  
