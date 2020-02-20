@@ -101,4 +101,4 @@ If you are using a Load Balancer in front of your Web Application, Security rule
 4.5-	Click ***‘Add Security List’*** button to assign the Security to the subnet.  
 
 ### 5-   Remove any permissive rules 
-5.1-	Click ***‘Add Security List’*** button to assign the Security to the subnet.  
+5.1-	Remove existing permisive rules to lockdown your WAF Origin.  
