@@ -56,8 +56,8 @@ This document will guide you through the steps needed to create and assign a ***
 
 2.3-	Copy and Paste (CTRL+SHIFT+’V’) the command below in your Cloud Shell session.
 
-**wafseclist=ocid1.securitylist.oc1.eu-frankfurt-1.aaaaaaaxxxxx**
-
+```**wafseclist=ocid1.securitylist.oc1.eu-frankfurt-1.aaaaaaaxxxxx**
+```
 (Replace ‘ocid1.securitylist.oc1.eu-frankfurt-1.aaaaaaaxxxxx’ by your Security List OCID copied in the previous step.)
 
 ![PMScreens](/img/06.jpg)
@@ -66,16 +66,17 @@ This document will guide you through the steps needed to create and assign a ***
 
 2.4.1-	***[OPTION 1]*** Allow incoming HTTP (TCP80) and HTTPS (TCP443) traffic, copy and Paste (CTRL+SHIFT+V) the commands below in your Cloud Shell session.
 
-**wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Mkpk6FPW9_BovdrajqNzKzH7M2UMhIJN5vEg-QLF6Vo/n/oracsmemeaspec/b/FraBuck01/o/wafseclist-import-80-443.json**
+```**wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Mkpk6FPW9_BovdrajqNzKzH7M2UMhIJN5vEg-QLF6Vo/n/oracsmemeaspec/b/FraBuck01/o/wafseclist-import-80-443.json**
 
 **oci network security-list update --security-list-id $wafseclist --ingress-security-rules file://wafseclist-import-80-443.json**
+```
 
 2.4.2- 	***[OPTION 2]*** Allow incoming HTTPS (TCP443) traffic only, copy and Paste (CTRL+SHIFT+V) the commands below in your Cloud Shell session.
 
-**wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/V-w5R9aNlzszQZeAbWDl6gyZ7x6cvIgv0162qhLLEoI/n/oracsmemeaspec/b/FraBuck01/o/wafseclist-import-443.json**
+```**wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/V-w5R9aNlzszQZeAbWDl6gyZ7x6cvIgv0162qhLLEoI/n/oracsmemeaspec/b/FraBuck01/o/wafseclist-import-443.json**
 
 **oci network security-list update --security-list-id $wafseclist --ingress-security-rules file://wafseclist-import-443.json**
-
+```
 
 ### 3-    Review the security list content. 
 
