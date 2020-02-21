@@ -43,6 +43,21 @@
           "source-port-range": null
         }, 
         "udp-options": null
+      },
+	{
+        "icmp-options": null, 
+        "is-stateless": false, 
+        "protocol": "6", 
+        "source": "130.35.128.0/20", 
+        "source-type": "CIDR_BLOCK", 
+        "tcp-options": {
+          "destination-port-range": {
+            "max": 443,
+            "min": 443
+          },
+          "source-port-range": null
+        }, 
+        "udp-options": null
       }, 
       {
         "icmp-options": null, 
