@@ -63,9 +63,11 @@ wafseclist=ocid1.securitylist.oc1.eu-frankfurt-1.aaaaaaaxxxxx
 
 ![PMScreens](/img/06.jpg)
 
+
 > ***Important Note:*** 
-> The content of the selected Security List will be overwritten by the OCI WAF security rules at the next step. 
+> The content of the selected Security List will be overwritten by the OCI WAF security rules during the next step. 
 > We strongly advise to create a new (empty) security list for this purpose. (As Described in this document)   
+
 
 2.4-	Import Security rules. 
 
