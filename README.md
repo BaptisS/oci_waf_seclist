@@ -75,7 +75,7 @@ wafseclist=ocid1.securitylist.oc1.eu-frankfurt-1.aaaaaaaxxxxx
 2.4.1-	***[OPTION 1]*** Allow incoming **HTTP (TCP80) and HTTPS (TCP443)** traffic, copy and Paste (_CTRL+SHIFT+V_) the commands below in your Cloud Shell session.
 
 ```
-wget https://github.com/BaptisS/oci_waf_seclist/blob/master/wafseclist-80-443-jan20.json
+wget -r https://raw.githubusercontent.com/BaptisS/oci_waf_seclist/master/wafseclist-80-443-jan20.json
 
 oci network security-list update --security-list-id $wafseclist --ingress-security-rules file://wafseclist-80-443-jan20.json
 ```
@@ -83,7 +83,7 @@ oci network security-list update --security-list-id $wafseclist --ingress-securi
 2.4.1- 	***[OPTION 2]*** Allow incoming **HTTPS (TCP443) only**, copy and Paste (_CTRL+SHIFT+V_) the commands below in your Cloud Shell session.
 
 ```
-wget https://github.com/BaptisS/oci_waf_seclist/blob/master/wafseclist-443-jan20.json
+wget -r https://raw.githubusercontent.com/BaptisS/oci_waf_seclist/blob/master/wafseclist-443-jan20.json
 
 oci network security-list update --security-list-id $wafseclist --ingress-security-rules file://wafseclist-443-jan20.json
 ```
