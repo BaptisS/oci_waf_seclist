@@ -63,9 +63,13 @@ wafseclist=ocid1.securitylist.oc1.eu-frankfurt-1.aaaaaaaxxxxx
 
 ![PMScreens](/img/06.jpg)
 
+> ***Important Note:*** 
+> The content of the selected Security List will be overwritten by the OCI WAF security rules at the next step. 
+> We strongly advise to create a new (empty) security list for this purpose. (As Described in this document)   
+
 2.4-	Import Security rules. 
 
-2.4.1-	***[OPTION 1]*** Allow incoming HTTP (TCP80) and HTTPS (TCP443) traffic, copy and Paste (CTRL+SHIFT+V) the commands below in your Cloud Shell session.
+2.4.1-	***[OPTION 1]*** Allow incoming **HTTP (TCP80) and HTTPS (TCP443)** traffic, copy and Paste (_CTRL+SHIFT+V_) the commands below in your Cloud Shell session.
 
 ```
 wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Mkpk6FPW9_BovdrajqNzKzH7M2UMhIJN5vEg-QLF6Vo/n/oracsmemeaspec/b/FraBuck01/o/wafseclist-import-80-443.json
@@ -73,7 +77,7 @@ wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Mkpk6FPW9_BovdrajqNz
 oci network security-list update --security-list-id $wafseclist --ingress-security-rules file://wafseclist-import-80-443.json
 ```
 
-2.4.2- 	***[OPTION 2]*** Allow incoming HTTPS (TCP443) traffic only, copy and Paste (CTRL+SHIFT+V) the commands below in your Cloud Shell session.
+2.4.2- 	***[OPTION 2]*** Allow incoming **HTTPS (TCP443) only**, copy and Paste (_CTRL+SHIFT+V_) the commands below in your Cloud Shell session.
 
 ```
 wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/V-w5R9aNlzszQZeAbWDl6gyZ7x6cvIgv0162qhLLEoI/n/oracsmemeaspec/b/FraBuck01/o/wafseclist-import-443.json
@@ -105,4 +109,8 @@ oci network security-list update --security-list-id $wafseclist --ingress-securi
 4.5-	Click ***‘Add Security List’*** button to assign the Security to the subnet.  
 
 ### 5-   Remove any permissive rules 
-5.1-	Remove existing permisive rules to lockdown your WAF Origin.  
+5.1-	Remove any pre-existing permisive rules to lockdown your WAF Origin and allow only incoming traffic from the OCI WAF Public IPs.
+
+
+
+
