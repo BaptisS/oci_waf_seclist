@@ -12,8 +12,8 @@ This document will guide you through the steps needed to create and assign a ***
 
 
 
-***Important Note:*** 
-If you are using a Load Balancer in front of your Web Application, Security rules must be applied to your Load Balancer subnet (if using Security Lists) or Load Balancer Network Interfaces (if using network Security Groups).
+> ***Important Note:*** 
+> If you are using a Load Balancer in front of your Web Application, Security rules must be applied to your Load Balancer subnet (if using Security Lists) or Load Balancer Network Interfaces (if using network Security Groups).
 
 
 ***Prerequisites:***
@@ -24,11 +24,11 @@ If you are using a Load Balancer in front of your Web Application, Security rule
  
 ### 1- Create a New (empty) Security List.    
 
-1.1-	Sign-in to the OCI web console with your OCI user account.
+ 1.1-	Sign-in to the OCI web console with your OCI user account. 
 
-1.2-	Open the OCI Menu (top left), expand the ***‘Networking’*** section and click on ***‘Virtual Cloud Networks’***. 
+1.2-	Open the OCI Menu (top left), expand the ***‘Networking’*** section and click on ***‘Virtual Cloud Networks’***.  
 
-1.3-	Click on your VCN then select the ***‘Security Lists’*** Resources type.  
+1.3-	Click on your VCN then select the ***‘Security Lists’*** Resources type. 
 
 ![PMScreens](/img/01.jpg)
 
