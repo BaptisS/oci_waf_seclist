@@ -80,13 +80,16 @@ wget https://github.com/BaptisS/oci_waf_seclist/blob/master/wafseclist-80-443-ja
 oci network security-list update --security-list-id $wafseclist --ingress-security-rules file://wafseclist-80-443-jan20.json
 ```
 
-2.4.2- 	***[OPTION 2]*** Allow incoming **HTTPS (TCP443) only**, copy and Paste (_CTRL+SHIFT+V_) the commands below in your Cloud Shell session.
+2.4.1- 	***[OPTION 2]*** Allow incoming **HTTPS (TCP443) only**, copy and Paste (_CTRL+SHIFT+V_) the commands below in your Cloud Shell session.
 
 ```
 wget https://github.com/BaptisS/oci_waf_seclist/blob/master/wafseclist-443-jan20.json
 
 oci network security-list update --security-list-id $wafseclist --ingress-security-rules file://wafseclist-443-jan20.json
 ```
+
+2.4.2- Review the Notification message and type 'y' to confirm. 
+
 
 ### 3-    Review the security list content. 
 
