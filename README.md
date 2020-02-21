@@ -75,24 +75,24 @@ wafseclist=ocid1.securitylist.oc1.eu-frankfurt-1.aaaaaaaxxxxx
 2.4.1-	***[OPTION 1]*** Allow incoming **HTTP (TCP80) and HTTPS (TCP443)** traffic, copy and Paste (_CTRL+SHIFT+V_) the commands below in your Cloud Shell session.
 
 ```
-wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Mkpk6FPW9_BovdrajqNzKzH7M2UMhIJN5vEg-QLF6Vo/n/oracsmemeaspec/b/FraBuck01/o/wafseclist-import-80-443.json
+wget https://github.com/BaptisS/oci_waf_seclist/blob/master/wafseclist-80-443-jan20.json
 
-oci network security-list update --security-list-id $wafseclist --ingress-security-rules file://wafseclist-import-80-443.json
+oci network security-list update --security-list-id $wafseclist --ingress-security-rules file://wafseclist-80-443-jan20.json
 ```
 
 2.4.2- 	***[OPTION 2]*** Allow incoming **HTTPS (TCP443) only**, copy and Paste (_CTRL+SHIFT+V_) the commands below in your Cloud Shell session.
 
 ```
-wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/V-w5R9aNlzszQZeAbWDl6gyZ7x6cvIgv0162qhLLEoI/n/oracsmemeaspec/b/FraBuck01/o/wafseclist-import-443.json
+wget https://github.com/BaptisS/oci_waf_seclist/blob/master/wafseclist-443-jan20.json
 
-oci network security-list update --security-list-id $wafseclist --ingress-security-rules file://wafseclist-import-443.json
+oci network security-list update --security-list-id $wafseclist --ingress-security-rules file://wafseclist-443-jan20.json
 ```
 
 ### 3-    Review the security list content. 
 
 ![PMScreens](/img/07.jpg)
 
-3.1-	Ensure the security List has been populated successfully with +40 security rules.  
+3.1-	Ensure the new security List has been populated successfully with +40 security rules.  
 
 ### 4-   Assign the Security List to the desired subnet.
 4.1-	Go to your VCN dashboard, and then select the ***‘Subnets’*** Resources section. 
@@ -117,5 +117,9 @@ oci network security-list update --security-list-id $wafseclist --ingress-securi
 5.1-	Remove any pre-existing permisive rules to lockdown your WAF Origin and allow only incoming traffic from the OCI WAF Public IPs.
 
 
+Links and References : 
 
+OCI WAF Public IPS : 
+OCI CloudShell 
+OCI WAF CLI References : 
 
