@@ -111,6 +111,8 @@ oci network security-list update --security-list-id $wafseclist --ingress-securi
 
 4.5-	Click ***‘Add Security List’*** button to assign the Security to the subnet.  
 
+![PMScreens](/img/11.jpg)
+
 ### 5-   Remove any permissive rules 
 5.1-	Remove any pre-existing permisive rules to lockdown your WAF Origin and allow only incoming traffic from the OCI WAF Public IPs.
 
