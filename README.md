@@ -1,5 +1,5 @@
 # Lockdown OCI WAF Origin using CloudShell (SecList) #
-Easy way to lockdown OCI WAF Origin 
+_An easy way to lockdown your OCI WAF Origin_ 
 
 When using a Web Application Firewall, it is important to apply a set of security rules around your Web Application to block all requests, which are not passing through the WAF service.
 
