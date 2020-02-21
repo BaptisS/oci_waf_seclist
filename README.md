@@ -120,7 +120,9 @@ oci network security-list update --security-list-id $wafseclist --ingress-securi
 5.1-	Remove any pre-existing permisive rules to lockdown your WAF Origin and allow only incoming traffic from the OCI WAF Public IPs.
 
 
-## Links and References :## 
+
+
+## Links and References : 
 
 
 OCI WAF documentation and Public IPS list : https://docs.cloud.oracle.com/en-us/iaas/Content/WAF/Concepts/gettingstarted.htm
