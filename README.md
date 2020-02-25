@@ -17,8 +17,8 @@ This document will guide you through the steps needed to create and assign a ***
 
 ***Prerequisites:***
 
-- An OCI user account with sufficient permissions to create and assign Security Lists in the desired Compartment / VCN. 
-- At least one Virtual Cloud Network. 
+- An OCI user account with enough permissions to create and assign Security Lists in the desired Compartment / VCN. 
+- At least one Virtual Cloud Network and one Subnet already created. 
  
  
  
