@@ -6,7 +6,7 @@ When using a Web Application Firewall, it is important to apply a set of securit
 
 OCI WAF stand in front of your web application to detect and block unwanted/malicious access. . In most cases, your Web Application itself sits behind a Load Balancer. Depending on your architecture and preferences, you may want to assign security rules to your Load Balancer or Web Application subnet by using a Security List, or alternatively you may prefer to assign the security rules to your Load Balancer or Web Application Network Interfaces by using a Network Security Group.
 
-This document will guide you through the steps needed to create and assign a ***Security List*** containing a list of OCI WAF public IP addresses used to send the traffic to your load balancer / Web Application. 
+This document will guide you through the steps needed to create and assign a ***Security List*** containing a list of OCI WAF public IP addresses used to send the traffic to your load balancer / Web Application. If you want to use _Network Security Groups_ for this purpose please consult the following guide : https://github.com/BaptisS/oci_waf_nsg
 
 
 
@@ -70,9 +70,9 @@ wafseclist=ocid1.securitylist.oc1.eu-frankfurt-1.aaaaaaaxxxxx
 > We strongly advise to create a new (empty) security list for this purpose. (As Described in this document)   
 
 
-2.4-	Import Security rules. 
+2.4-	***[OPTION 1]*** Allow inbound **HTTP (TCP80) and HTTPS (TCP443)** traffic
 
-2.4.1-	***[OPTION 1]*** Allow incoming **HTTP (TCP80) and HTTPS (TCP443)** traffic, copy and Paste (_CTRL+SHIFT+V_) the commands below in your Cloud Shell session.
+2.4.1-	Copy and Paste (_CTRL+SHIFT+V_) the commands below in your Cloud Shell session.
 
 ```
 wget -N https://raw.githubusercontent.com/BaptisS/oci_waf_seclist/master/wafseclist-80-443-jan20.json
@@ -80,7 +80,13 @@ wget -N https://raw.githubusercontent.com/BaptisS/oci_waf_seclist/master/wafsecl
 oci network security-list update --security-list-id $wafseclist --ingress-security-rules file://wafseclist-80-443-jan20.json
 ```
 
-2.4.1- 	***[OPTION 2]*** Allow incoming **HTTPS (TCP443) only**, copy and Paste (_CTRL+SHIFT+V_) the commands below in your Cloud Shell session.
+2.4.2- Review the Notification message and type 'y' to confirm. 
+
+
+
+2.4-	***[OPTION 2]*** Allow inbound **HTTPS (TCP443) only**
+
+2.4.1- 	Copy and Paste (_CTRL+SHIFT+V_) the commands below in your Cloud Shell session.
 
 ```
 wget -N https://raw.githubusercontent.com/BaptisS/oci_waf_seclist/blob/master/wafseclist-443-jan20.json
@@ -117,7 +123,7 @@ oci network security-list update --security-list-id $wafseclist --ingress-securi
 ![PMScreens](/img/11.jpg)
 
 ### 5-   Remove any permissive rules 
-5.1-	Remove any pre-existing permisive rules to lockdown your WAF Origin and allow only incoming traffic from the OCI WAF Public IPs.
+5.1-	Once you've assigned the new security list which contains the required security rules to allow inbound traffic from OCI WAF endpoints, you can remove any other ( more permissive ) pre-existing rules to lockdown your WAF Origin and allow only inbound traffic from the OCI WAF services.
 
 
 
