@@ -89,7 +89,7 @@ oci network security-list update --security-list-id $wafseclist --ingress-securi
 2.4.1- 	Copy and Paste (_CTRL+SHIFT+V_) the commands below in your Cloud Shell session.
 
 ```
-wget -N https://raw.githubusercontent.com/BaptisS/oci_waf_seclist/blob/master/wafseclist-443-Feb20.json
+wget -N https://raw.githubusercontent.com/BaptisS/oci_waf_seclist/master/wafseclist-443-Feb20.json
 
 oci network security-list update --security-list-id $wafseclist --ingress-security-rules file://wafseclist-443-Feb20.json
 ```
