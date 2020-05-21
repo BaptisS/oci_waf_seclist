@@ -1,6 +1,9 @@
 #!/bin/bash
 wget https://raw.githubusercontent.com/BaptisS/oci_waf_seclist/master/wafrule-TCP80443.sh
+wget https://raw.githubusercontent.com/BaptisS/oci_waf_seclist/master/wafrule-TCP443.sh
 chmod +x wafrule-TCP80443.sh
+chmod +x wafrule-TCP443.sh
+
 wafips=$(oci waas edge-subnet list --all)
 wafcidrs=$(echo $wafips | jq '.data[] | .cidr')
 
