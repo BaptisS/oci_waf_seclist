@@ -10,3 +10,5 @@ echo "]" >> seclist-waf-TCP443.json
 sed -i 's+66.254.103.241+66.254.103.241/32+g' seclist-waf-TCP443.json                                            
 sed -zr 's/,([^,]*$)/\1/' seclist-waf-TCP443.json > seclist-waf-TCP443_fixed.json
 oci network security-list update --security-list-id $wafseclist --ingress-security-rules file://seclist-waf-TCP443_fixed.json --force
+rm -f seclist-waf-TCP443.json
+rm -f seclist-waf-TCP443_fixed.json
