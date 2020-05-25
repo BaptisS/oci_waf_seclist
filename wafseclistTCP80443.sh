@@ -9,6 +9,7 @@ wafcidrs=$(echo $wafips | jq '.data[] | .cidr')
 
 rm -f seclist-waf-TCP80443-temp.json
 rm -f seclist-waf-TCP80443.json
+rm -f seclist-waf-TCP443.json
 
 echo "[" >> seclist-waf-TCP80443-temp.json
 for cidr in $wafcidrs; do ./wafrule-TCP80443.sh $cidr ; done
